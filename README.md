@@ -20,6 +20,7 @@ build or copy step. LuaCs compiles `CSharp/Shared/*.cs` in memory at load time.
 pwsh tools/deploy.ps1              # (re)create the LocalMods junction
 pwsh tools/deploy.ps1 -Remove      # unlink
 pwsh tools/refresh-ref.ps1 -Force  # re-decompile after a game/LuaCs update
+pwsh tools/push.ps1                # push with GITHUB_TOKEN (bypasses the stored credential)
 ```
 
 `tools/github-mcp.ps1` is not meant to be run by hand - OpenCode starts it as the
