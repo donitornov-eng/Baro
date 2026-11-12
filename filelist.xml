@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Global Overhaul" modversion="0.1.0" corepackage="False" gameversion="1.13.5.0">
+  <!-- Items -->
+  <Item file="%ModDir%/Content/Items/GlobalOverhaulWeapons.xml" />
+
+  <!-- Characters -->
+  <Character file="%ModDir%/Content/Characters/GlobalOverhaulCrawlerElite.xml" />
+
+  <!-- Localization -->
+  <Text file="%ModDir%/Text/English.xml" />
+  <Text file="%ModDir%/Text/Russian.xml" />
+</contentpackage>

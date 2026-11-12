@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Global Overhaul - English localization.
+
+  Every item/character name and description in the XML content points at a key in
+  these files (e.g. "entityname.go_plasmacannon"). Keys are global, so prefix them
+  with "go." or "go_" to avoid clashing with vanilla or other mods.
+-->
+<infotexts language="English" nowhitespace="false" translatedname="English">
+
+  <!-- Items -->
+  <!-- <entityname.go_plasmacannon>Plasma Cannon</entityname.go_plasmacannon> -->
+
+  <!-- Characters -->
+  <!-- <entityname.globaloverhaulcrawlerelite>Elite Crawler</entityname.globaloverhaulcrawlerelite> -->
+
+</infotexts>

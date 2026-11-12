@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Global Overhaul - elite crawler variant.
+
+  A Charactervariant inherits everything from the vanilla "Crawler" prefab and only
+  overrides the listed values, which keeps the file small and makes it survive
+  vanilla rebalances. filelist.xml wires this up with <Character file="..." />.
+
+  Tune these numbers through Config/EnemySpawns.xml once the spawn rules are in
+  place; this file is the baseline stat block.
+-->
+<Charactervariant inherit="Crawler"
+                  speciesname="GlobalOverhaulCrawlerElite"
+                  speciestranslationoverride="Crawler"
+                  usebosshealthbar="false">
+  <health vitality="200" />
+  <ai combatstrength="180" avoidgunfire="False" />
+  <ragdoll scalemultiplier="1.15" />
+  <attack damagemultiplier="1.2" rangemultiplier="1.1" impactmultiplier="1.2" />
+</Charactervariant>

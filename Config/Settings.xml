@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Global Overhaul - user-facing settings.
+
+  Loaded by LuaCs from ModConfig.xml (<Config File="%ModDir%/Config/Settings.xml" />)
+  before the plugin's Initialize() runs. Names must match the Bind("...") calls in
+  CSharp/Shared/GlobalOverhaulPlugin.cs exactly.
+
+  Supported Type values: bool, byte, sbyte, short, ushort, int, uint, long, ulong,
+  string, float, single, double, rangeInt, rangeFloat, control,
+  listBool, listInt, listFloat, listString, ...
+
+  These are toggles and global multipliers only. Per-item balance lives in
+  Config/TraderStock.xml, Prices.xml, EnemySpawns.xml and BalanceRules.xml so it can
+  be reloaded with the go_reload console command without restarting the game.
+-->
+<Configuration>
+  <Settings>
+
+    <!-- Module toggles -->
+    <Setting Name="EnableTraderStock" Type="bool" Value="true" ShowInMenus="true" />
+    <Setting Name="EnableTraderPrices" Type="bool" Value="true" ShowInMenus="true" />
+    <Setting Name="EnableEnemySpawns" Type="bool" Value="true" ShowInMenus="true" />
+    <Setting Name="EnableItemBalance" Type="bool" Value="true" ShowInMenus="true" />
+    <Setting Name="DebugLogging" Type="bool" Value="false" ShowInMenus="true" />
+
+    <!-- Trader price and stock multipliers (1 = vanilla) -->
+    <Setting Name="GlobalBuyPriceMultiplier" Type="float" Value="1.0" ShowInMenus="true" />
+    <Setting Name="GlobalSellPriceMultiplier" Type="float" Value="1.0" ShowInMenus="true" />
+    <Setting Name="GlobalStockMultiplier" Type="float" Value="1.0" ShowInMenus="true" />
+
+    <!-- Item balance multipliers (1 = vanilla) -->
+    <Setting Name="ItemDamageMultiplier" Type="float" Value="1.0" ShowInMenus="true" />
+    <Setting Name="ItemReloadMultiplier" Type="float" Value="1.0" ShowInMenus="true" />
+    <Setting Name="ItemMaxConditionMultiplier" Type="float" Value="1.0" ShowInMenus="true" />
+
+    <!-- Enemy spawn tuning -->
+    <Setting Name="EnemyAmountMultiplier" Type="float" Value="1.0" ShowInMenus="true" />
+    <Setting Name="EnemyMaxExtraPerEvent" Type="int" Value="4" ShowInMenus="true" />
+
+  </Settings>
+</Configuration>

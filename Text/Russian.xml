@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Global Overhaul - Russian localization.
+  Keys must match Text/English.xml exactly.
+-->
+<infotexts language="Russian" nowhitespace="false" translatedname="Russian">
+
+  <!-- Items -->
+  <!-- <entityname.go_plasmacannon>Плазменная пушка</entityname.go_plasmacannon> -->
+
+  <!-- Characters -->
+  <!-- <entityname.globaloverhaulcrawlerelite>Элитный краулер</entityname.globaloverhaulcrawlerelite> -->
+
+</infotexts>

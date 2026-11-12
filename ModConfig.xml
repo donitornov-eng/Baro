@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Global Overhaul wiring.
+
+  The C# sources are compiled in-memory by LuaCs. One shared folder is used for
+  both client and server; the code does not depend on CLIENT/SERVER symbols.
+
+  Config/Settings.xml is shared by both sides. The XML rule files in Config/ are
+  read directly by the plugin at startup and can be reloaded at runtime with
+  the go_reload console command.
+-->
+<ModConfig>
+  <Assembly Folder="%ModDir%/CSharp/Shared" Target="Any" IsScript="true" FriendlyName="GlobalOverhaulAssembly" />
+  <Config File="%ModDir%/Config/Settings.xml" />
+</ModConfig>

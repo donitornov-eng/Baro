@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Global Overhaul - weapons, turrets and ammunition.
+
+  Empty container on purpose: the file exists so filelist.xml resolves and the
+  content package loads cleanly. Stage 4 of the plan adds <Item> elements here
+  (handheld weapons, turrets, projectiles). See the barotrauma-xml skill for the
+  verified minimal templates.
+
+  Reminder: every identifier must be unique across ALL loaded packages, including
+  vanilla. Prefix new identifiers with "go_" to avoid collisions.
+-->
+<Items>
+</Items>
