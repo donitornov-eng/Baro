@@ -3,12 +3,15 @@
   "mcp": {
     "servers": {
       "github": {
-        "type": "remote",
-        "url": "https://api.githubcopilot.com/mcp/",
-        "oauth": false,
-        "headers": {
-          "Authorization": "Bearer {env:GITHUB_TOKEN}"
-        }
+        "type": "local",
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "G:\\OpenCode\\BOGM\\tools\\github-mcp.ps1"
+        ]
       }
     }
   }

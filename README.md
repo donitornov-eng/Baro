@@ -22,6 +22,9 @@ pwsh tools/deploy.ps1 -Remove      # unlink
 pwsh tools/refresh-ref.ps1 -Force  # re-decompile after a game/LuaCs update
 ```
 
+`tools/github-mcp.ps1` is not meant to be run by hand - OpenCode starts it as the
+GitHub MCP server (see below).
+
 ## Skills (loaded by the agent automatically)
 
 | Skill | Use |
@@ -34,17 +37,31 @@ pwsh tools/refresh-ref.ps1 -Force  # re-decompile after a game/LuaCs update
 
 ## MCP
 
-`opencode.json` configures the GitHub MCP server (code search for LuaCs sources,
-vanilla content and other mods). The endpoint does not offer OAuth to this client,
-so it authenticates with a token from the `GITHUB_TOKEN` environment variable:
+`opencode.json` runs the GitHub MCP server **locally** (stdio), because GitHub's
+hosted endpoint `https://api.githubcopilot.com/mcp/` answers `403 forbidden: access
+denied` for this account even with a valid token.
+
+```
+opencode.json
+  -> powershell tools/github-mcp.ps1
+     -> %APPDATA%\npm\mcp-server-github.cmd   (@modelcontextprotocol/server-github)
+```
+
+The token is never stored in a config file. `tools/github-mcp.ps1` resolves it at
+launch time from `GITHUB_PERSONAL_ACCESS_TOKEN`, then `GITHUB_TOKEN` (process), then
+`GITHUB_TOKEN` (user-level registry value), so it also works when the OpenCode
+service was started before the variable existed.
+
+Setup on a new machine:
 
 ```powershell
+npm install -g @modelcontextprotocol/server-github
 [Environment]::SetEnvironmentVariable('GITHUB_TOKEN', '<token>', 'User')
 ```
 
-Restart OpenCode afterwards so the process inherits the variable, then check
-`/mcps`. Token: classic PAT with `public_repo` (add `repo` for private repos),
-or fine-grained with `Contents: read` + `Metadata: read`.
+Token scopes: classic PAT with `public_repo` (add `repo` for private repos), or
+fine-grained with `Contents: read` + `Metadata: read`. Restart OpenCode only if the
+variable was created after the app started; config edits are picked up live.
 
 ## Packaging note
 
